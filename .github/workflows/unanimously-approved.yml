@@ -13,4 +13,4 @@ jobs:
 
     steps:
       - run: cat $GITHUB_EVENT_PATH
-      - uses: Jrmyy/unanimously-approved@main
+      - uses: snow-actions/unanimously-approved@main
