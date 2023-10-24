@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - run: cat $GITHUB_EVENT_PATH
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
