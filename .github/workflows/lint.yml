@@ -19,3 +19,16 @@ jobs:
       - uses: tsuyoshicho/action-textlint@v3
         with:
           fail_on_error: true
+
+  textlint-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - run: cat $GITHUB_EVENT_PATH
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.head_ref }}
+      - uses: SnowCait/action-textlint@fix/filter-mode-behavior
+        with:
+          fail_on_error: true
